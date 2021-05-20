@@ -1,0 +1,218 @@
+@import "./_mixins";
+
+.faq__card{
+    background: linear-gradient($Softviolet,$Softblue);
+    height: 100vh;
+    position: relative;
+    @include flex(row,center,center);
+    @include max(950px){
+        height: 120vh;
+    }
+    
+    .faq__main{
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 38px;
+        align-items: center;
+        padding: 70px 0px;
+        border-radius: 23px;
+        margin-top: 12px;
+        margin-left: 57.5px;
+        margin-right: 32.5px;
+        overflow: hidden;
+        background-image: url(/images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: -530px -263px;
+        box-shadow: 0px 26px 30px -2px rgba(0,0,0,0.38);
+        animation: fadeIn 0.8s ease-in-out   forwards;
+        @include max(1080px){
+            margin: 12px 0px;
+            grid-column-gap: 18px;
+        }
+        @include max(950px){
+            grid-template-columns: auto;
+            margin-top: 120px;
+            background-image: none;
+        } 
+
+       
+        // ******** Desktop img ***********\\
+        .faq__img-desktop{
+            img{
+                margin-bottom: 6px;
+                margin-left: -83.5px;
+                animation: slide 0.8s ease-in-out forwards;
+            }
+            @include max(950px){
+                display: none;
+            }
+        }
+
+         // ******** Mobile img ***********\\
+        .faq__img-mobile{
+            background: url(/images/illustration-woman-online-mobile.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 180px;
+            width: 250px;
+            position: absolute;
+            top: 20px;
+            left: 46%;
+            transform: translate(-50%);
+            z-index: 100;
+            &::after{
+                content: "";
+                display: block;
+                background: url(/images/bg-pattern-mobile.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 120px;
+                width: 100%;
+                position: absolute;
+                top: 90px;
+                left: 12px;
+                z-index: 0;
+            }
+            @include min(480px){
+                top: 5px;
+                height: 210px;
+                width: 280px;
+            }
+            @include min(949px){
+                display: none;
+            }
+        }
+
+
+         // ******** Text ***********\\
+        .faq__text{
+            padding-left: 50px;
+            padding-right: 90px;
+            padding-bottom: 20px;
+            max-height: 363px;
+            border: 2px solid transparent;
+            margin: 0px;
+            overflow: auto;
+            overflow-x: hidden;
+            @include max(950px){
+                padding: 0px 20px;
+                padding-top: 50px;
+                max-height: 393px;
+            }
+            @include max(500px){
+                padding: 0px 20px;
+                padding-top: 50px;
+                max-height: 383px;
+            }
+            @include max(345px){
+                padding: 0px 20px;
+                padding-top: 50px;
+                max-height: 373px;
+            }
+            h1{
+                color: $Verydarkdesaturatedblue;
+                font-size: 2rem;
+                padding-bottom: 30px;
+                @include max(950px){
+                    text-align: center;
+                }
+                @include max(500px){
+                    font-size: 1.85rem;
+                }
+            }
+
+
+
+            .faq{
+                // ******** Question ***********\\
+                .que{
+                    @include flex(row,none,space-between);
+                    p{
+                        cursor: pointer;
+                        font-size: 0.86rem;
+                        padding: 10px 0px;
+                        color: $Verydarkgrayishblue;
+                        @include max(500px){
+                            font-size: 0.75rem;
+                        }
+                        @include max(345px){
+                            font-size: 0.65rem;
+                        }
+                        &:hover{
+                            color: $Sofred;
+                        }
+                        &:active{
+                            color: black;
+                        }
+                    }
+                    span{
+                        margin-top: 6px;
+                        margin-right: 18px;
+                        cursor: pointer;
+                    }
+                }
+                // ******** Answer ***********\\
+                .ans{
+                    p{
+                        color: $Darkgrayishblue;
+                        font-size: 0.75rem;
+                        line-height: 0;
+                        padding: 0px;
+                        visibility: hidden;
+                        opacity: 0;
+                        @include max(500px){
+                            font-size: 0.7rem;
+                        }
+                        @include max(345px){
+                            font-size: 0.62rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+hr{
+    margin: 10px 0px;
+}
+.box__img{
+    z-index: 100;
+    position: absolute;
+    top: 217px;
+    left: -14.5px;
+    height: 182px;
+    width: 100%;
+    max-width: 20rem;
+    background-image: url(/images/illustration-box-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: bounce 2.5s ease-in-out infinite;
+    @include max(1080px){
+        left: -56.5px;
+    }
+    @include max(950px){
+        display: none;
+    }
+}
+
+
+
+
+// ****************************** Scroll bar *************************************\\
+::-webkit-scrollbar {
+    width: 8px;
+    
+} 
+
+::-webkit-scrollbar-track {
+    background-color: $Softviolet;
+    border-radius: 20px;
+} 
+
+::-webkit-scrollbar-thumb {
+    background-color: $Softblue;
+    border-radius: 20px; 
+}
+// *******************************************************************************\\

@@ -1,0 +1,119 @@
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to{
+        opacity: 1;
+    }
+}
+// *****************************************************************\\
+@keyframes slide {
+    from{
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+// *****************************************************************\\
+@keyframes bounce {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+
+// *****************************************************************\\
+
+.add{
+    img{
+        animation: add 0.7s ease-in-out forwards;
+    }
+}
+
+
+.remove{
+    img{
+        animation: remove  0.7s ease-in-out forwards;
+    }
+}
+
+@keyframes add {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes remove {
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+
+// *****************************************************************\\
+
+.show{
+    .ans{
+        p{
+            visibility: visible;
+            animation: show 0.6s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+    }
+}    
+
+.hide{
+    .ans{
+        p{
+            visibility: hidden;
+            animation: hide 0.6s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@keyframes hide {
+    from{
+        visibility: visible;
+        line-height: 1.5;
+        opacity: 1;
+        transform: rotateY(0px);
+        padding: 14px 0px;
+    }
+    to{
+        line-height: 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+    }
+}
+
+
+@keyframes show {
+    from{
+        line-height: 0;
+        opacity: 0;
+        transform: translateY(-20px);
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+        line-height: 1.5;
+        opacity: 1;
+        transform: translateX(0px);
+        padding: 14px 0px;
+    }
+}
+
+// *****************************************************************\\
